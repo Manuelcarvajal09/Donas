@@ -4,7 +4,6 @@ function ExtraerElementos(elemento){
     let miNumero=Number(miTexto);
     return miNumero;
 }
-
 function calcular(){
     let ventas=[];
     ventas[0]=ExtraerElementos("ventasTienda1");
@@ -26,7 +25,6 @@ function calcular(){
 
     elementoSalida.textContent=mensajeSalida;
 }
-
 function sumarTotal(array){
     let total=0;
 
