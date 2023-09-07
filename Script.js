@@ -3,6 +3,7 @@ function crearParrafoTienda(textoLabel, valorMin) {
   let eleParrafo = document.createElement("p");
   //!Crear etiqueta label
   let eleLabel = document.createElement("label");
+  eleLabel.innerText = textoLabel + ": ";
   //!Conectar con input
   eleLabel.setAttribute("for", textoLabel);
   //!Crear el input
@@ -25,6 +26,11 @@ function CrearTiendas(contenedorID, min, tiendas) {
   //!Loop para crear las tiendas necesarias
   for (let conteoTiendas = 1; conteoTiendas <= tiendas; conteoTiendas++) {
     //Crear el texto label para llamar a la funcion
+    let textoEtiqueta = "Tienda " + conteoTiendas;
+    //Crear tiendas con crearParrafoTienda
+    let parrafoTienda = crearParrafoTienda(textoEtiqueta, min);
+    //Agregar al parrafo contenedor
+    elementoContenedor.appendChild(parrafoTienda);
   }
 }
 function ExtraerElementos(elemento) {
