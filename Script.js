@@ -34,19 +34,20 @@ function CrearTiendas(contenedorID, min, tiendas) {
   }
 }
 function ExtraerElementos(elemento) {
-  let miElemento = document.getElementById(elemento);
-  let miTexto = miElemento.value;
+  let miTexto = elemento.value;
   let miNumero = Number(miTexto);
   return miNumero;
 }
 function calcular() {
   let ventas = [];
-  ventas[0] = ExtraerElementos("ventasTienda1");
-  ventas[1] = ExtraerElementos("ventasTienda2");
-  ventas[2] = ExtraerElementos("ventasTienda3");
-  ventas[3] = ExtraerElementos("ventasTienda4");
-  ventas[4] = ExtraerElementos("ventasTienda5");
-  ventas[5] = ExtraerElementos("ventasTienda6");
+  let posicionVentas = 0;
+  let elementosVentas = document.getElementById("itemsTiendas");
+
+  for (let item of elementosVentas.children) {
+    let valorVenta = ExtraerElementos(item.children[1]);
+    ventas[posicionVentas] = valorVenta;
+    posicionVentas = posicionVentas + 1;
+  }
 
   let totalVentas = sumarTotal(ventas);
   let ventaMayor = calcMayor(ventas);
