@@ -2,3 +2,9 @@ body {
   background-color: aquamarine;
   text-align: center;
 }
+.inputMayor {
+  background-color: green;
+}
+.inputMenor {
+  background-color: red;
+}
