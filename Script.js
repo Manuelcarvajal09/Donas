@@ -53,13 +53,18 @@ function calcular() {
   let ventaMayor = calcMayor(ventas);
   let ventaMenor = calcMenor(ventas);
 
-  let mensajeSalida =
-    "Total de ventas es: " +
-    totalVentas +
-    "/ Venta mayor: " +
-    ventaMayor +
-    "/ Venta menor: " +
-    ventaMenor;
+  let mensajeSalida = "Total de ventas es: " + totalVentas;
+  for (let item of elementosVentas.children) {
+    let valorVenta = ExtraerElementos(item.children[1]);
+    item.children[1].className = "neutro";
+    item.children[1].className = "neutro";
+    if (valorVenta == ventaMayor) {
+      item.children[1].className = "inputMayor";
+    }
+    if (valorVenta == ventaMenor) {
+      item.children[1].className = "inputMenor";
+    }
+  }
 
   let elementoSalida = document.getElementById("Salida");
 
